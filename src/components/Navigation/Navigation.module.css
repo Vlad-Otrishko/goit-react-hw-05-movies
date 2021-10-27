@@ -1,0 +1,15 @@
+.link {
+    margin:10px;
+    text-decoration: none;
+    color:rgb(62, 12, 241);
+    font-size:20px;
+    font-weight:700;
+} 
+.activeLink {
+    color:green;
+    font-size: 20px;
+    font-weight:900;
+}
+.link:hover, .link:focus {
+font-size:24px;
+}
