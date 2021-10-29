@@ -43,13 +43,14 @@ const MoviesGallery = ({ query }) => {
 
 
   useEffect(() => {
-    if (!query) {
-    setStatus('pending');
-      searchApi.searchType = 0;
-      handleQuery();
-    // setStatus('idle');
-      return;
-    }
+    if (!query && pathname === '/movies') { setMovies([]); return; }
+      if (!query) {
+        setStatus('pending');
+        searchApi.searchType = 0;
+        handleQuery();
+        // setStatus('idle');
+        return;
+      }
     setStatus('pending');
     searchApi.reset();
     searchApi.searchType = 1;
@@ -59,14 +60,14 @@ const MoviesGallery = ({ query }) => {
   }, [query]);
 
 
-  useEffect(() => {
-    if (movies.length === 0) { return; }
-      window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: 'smooth',
-      });
-}, [movies]
-  )
+//   useEffect(() => {
+//     if (movies.length === 0) { return; }
+//       window.scrollTo({
+//         top: document.documentElement.scrollHeight,
+//         behavior: 'smooth',
+//       });
+// }, [movies]
+  // )
 
   const loadMore = () => {
     console.log('query=', query)

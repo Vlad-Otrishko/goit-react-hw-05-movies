@@ -47,7 +47,8 @@ display: block;
  
   }
   .navigation__block {
-    display: block;
+    display: flex;
+    justify-content: space-between;
     padding: 10px;
     border-bottom: dashed 3px blue;
   }

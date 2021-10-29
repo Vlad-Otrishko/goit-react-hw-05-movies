@@ -2,7 +2,10 @@ import { NavLink} from 'react-router-dom';
 import s from './Navigation.module.css';
 import PropTypes from 'prop-types';
 
+
 const Navigation = ({ address, pageName }) => {
+
+
     return (
       <nav id='home'>
         <NavLink exact to={address[0]} className={s.link} activeClassName={s.activeLink}>
