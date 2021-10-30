@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SearchBar from '../../components/SearchBar';
 import MoviesGallery from '../../components/MoviesGallery';
 import { ToastContainer } from 'react-toastify';
@@ -6,10 +6,18 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const MoviesPage = () => {
-    const [query, setQuery] = useState('');
+  const [query, setQuery] = useState('');
+  
+  useEffect(() => {
+    if (localStorage.getItem('lastQuery')) {
+      setQuery(localStorage.getItem('lastQuery'));
+    }
+    },[])
+  
 
     const formSubmitHandler = formQuery => {
       setQuery(formQuery);
+      localStorage.setItem('lastQuery', formQuery);
     };
 
   

@@ -15,7 +15,6 @@ const CastSubview = () => {
     searchApi.searchType = 2;
     searchApi.request = queryString;
     searchApi.searchMovies().then(result => {
-      console.log('result', result);
       setActors(result.cast);
     });
   }, [queryString]);

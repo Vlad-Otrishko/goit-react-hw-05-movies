@@ -25,7 +25,6 @@ const MovieDetailsPage = () => {
 
   const history = useHistory();
   const location = useLocation();
-  console.log(location);
 
   //записываем значение пути исходной страницы(откуда пришли) в локальное хранилище,
   //чтобы значение можно было использовать после перехода на Review или Сast
@@ -50,7 +49,6 @@ const MovieDetailsPage = () => {
 
   const onGoBack = () => {
     history.push(JSON.parse(localStorage.getItem('location')) ?? '/');
-    localStorage.clear();
   };
 
   useEffect(() => {
